@@ -9,10 +9,10 @@ function App() {
   return (
 
     <Routes>
-      <Route path="/myport" element={<Layout />}>
-        <Route path="/myport/home" element={<Home />} />
-          <Route path="/myport/about" element={<About />}/>
-          <Route path="/myport/contact" element={<Contact />}/>
+      <Route path="/" element={<Layout />}>
+        <Route index element={<Home />} />
+          <Route path="/about" element={<About />}/>
+          <Route path="/contact" element={<Contact />}/>
       </Route>
     </Routes>
   )
