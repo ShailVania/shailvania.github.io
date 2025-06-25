@@ -3,13 +3,13 @@ import Loader from "react-loaders";
 import AnimatedLetters from "../AnimatedLetters";
 import {useEffect, useRef, useState} from "react";
 import emailjs from '@emailjs/browser'
-import {serviceId, templateId, publicKey} from "../../keys";
-
-
 
 const Contact = () => {
     const [letterClass,setLetterClass] = useState('text-animate')
     const refForm = useRef()
+    const serviceId = process.env.REACT_APP_SMTP_SERVICE_ID
+    const templateId = process.env.REACT_APP_SMTP_TEMPLATE_ID
+    const publicKey = process.env.REACT_APP_SMTP_PUBLIC_KEY
 
     useEffect(() => {
         setTimeout(()=>{
@@ -19,6 +19,7 @@ const Contact = () => {
 
     const sendEmail = (e) => {
         e.preventDefault()
+
         emailjs.sendForm(
             serviceId,
             templateId,
@@ -29,11 +30,12 @@ const Contact = () => {
                     alert('Message successfully sent!')
                     window.location.reload(false)
                 },
-                () => {
-                    alert('Failed to send the message, please try again')
+                (error) => {
+                    alert('Failed to send the message: ' + error.text)
                 }
             )
     }
+
     return(
         <>
             <div className='container contact-page'>
