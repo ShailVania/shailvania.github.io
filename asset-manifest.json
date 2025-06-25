@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/shailvania.github.io/static/css/main.f4cc58aa.css",
-    "main.js": "/shailvania.github.io/static/js/main.f470de91.js",
+    "main.js": "/shailvania.github.io/static/js/main.fcf46357.js",
     "static/js/787.b2e1b36e.chunk.js": "/shailvania.github.io/static/js/787.b2e1b36e.chunk.js",
     "static/media/helvetica-neu.ttf": "/shailvania.github.io/static/media/helvetica-neu.8a19678078a6b21c8057.ttf",
     "static/media/logo_sub.png": "/shailvania.github.io/static/media/logo_sub.125bab24750bf236774f.png",
@@ -10,11 +10,11 @@
     "static/media/CoolveticaRg-Regular.woff2": "/shailvania.github.io/static/media/CoolveticaRg-Regular.7d1f3b1dd46ad6557a17.woff2",
     "index.html": "/shailvania.github.io/index.html",
     "main.f4cc58aa.css.map": "/shailvania.github.io/static/css/main.f4cc58aa.css.map",
-    "main.f470de91.js.map": "/shailvania.github.io/static/js/main.f470de91.js.map",
+    "main.fcf46357.js.map": "/shailvania.github.io/static/js/main.fcf46357.js.map",
     "787.b2e1b36e.chunk.js.map": "/shailvania.github.io/static/js/787.b2e1b36e.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.f4cc58aa.css",
-    "static/js/main.f470de91.js"
+    "static/js/main.fcf46357.js"
   ]
 }
