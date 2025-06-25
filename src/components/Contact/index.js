@@ -3,10 +3,12 @@ import Loader from "react-loaders";
 import AnimatedLetters from "../AnimatedLetters";
 import {useEffect, useRef, useState} from "react";
 import emailjs from '@emailjs/browser'
+import { useNavigate } from "react-router-dom";
 
 const Contact = () => {
     const [letterClass,setLetterClass] = useState('text-animate')
     const refForm = useRef()
+    const navigate = useNavigate();
     const serviceId = process.env.REACT_APP_SMTP_SERVICE_ID
     const templateId = process.env.REACT_APP_SMTP_TEMPLATE_ID
     const publicKey = process.env.REACT_APP_SMTP_PUBLIC_KEY
@@ -20,10 +22,6 @@ const Contact = () => {
     const sendEmail = (e) => {
         e.preventDefault()
 
-        console.log('serviceId:', serviceId);
-        console.log('templateId:', templateId);
-        console.log('publicKey:', publicKey);
-
         emailjs.sendForm(
             serviceId,
             templateId,
@@ -32,7 +30,7 @@ const Contact = () => {
             .then(
                 () => {
                     alert('Message successfully sent!')
-                    window.location.reload(false)
+                    navigate('/')
                 },
                 (error) => {
                     console.error('EmailJS Error:', error);
