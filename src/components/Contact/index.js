@@ -20,6 +20,10 @@ const Contact = () => {
     const sendEmail = (e) => {
         e.preventDefault()
 
+        console.log('serviceId:', serviceId);
+        console.log('templateId:', templateId);
+        console.log('publicKey:', publicKey);
+
         emailjs.sendForm(
             serviceId,
             templateId,
@@ -31,6 +35,7 @@ const Contact = () => {
                     window.location.reload(false)
                 },
                 (error) => {
+                    console.error('EmailJS Error:', error);
                     alert('Failed to send the message: ' + error.text)
                 }
             )
