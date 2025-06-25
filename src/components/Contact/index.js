@@ -3,12 +3,12 @@ import Loader from "react-loaders";
 import AnimatedLetters from "../AnimatedLetters";
 import {useEffect, useRef, useState} from "react";
 import emailjs from '@emailjs/browser'
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Contact = () => {
     const [letterClass,setLetterClass] = useState('text-animate')
+    const [isSent, setIsSent] = useState(false);
     const refForm = useRef()
-    const navigate = useNavigate();
     const serviceId = process.env.REACT_APP_SMTP_SERVICE_ID
     const templateId = process.env.REACT_APP_SMTP_TEMPLATE_ID
     const publicKey = process.env.REACT_APP_SMTP_PUBLIC_KEY
@@ -29,8 +29,7 @@ const Contact = () => {
             publicKey)
             .then(
                 () => {
-                    alert('Message successfully sent!')
-                    navigate('/')
+                    setIsSent(true);
                 },
                 (error) => {
                     console.error('EmailJS Error:', error);
@@ -55,6 +54,12 @@ const Contact = () => {
                         Reach out to me, and let's create some digital magic together!
                     </p>
                     <div className='contact-form'>
+                        {isSent ? (
+                            <div>
+                                <p>Thank you for your message! I will get back to you shortly.</p>
+                                <Link to="/" className="flat-button">GO TO HOMEPAGE</Link>
+                            </div>
+                        ) : (
                         <form ref={refForm} onSubmit={sendEmail}>
                             <ul>
                                 <li className='half'>
@@ -74,6 +79,7 @@ const Contact = () => {
                                 </li>
                             </ul>
                         </form>
+                        )}
                     </div>
                 </div>
 
