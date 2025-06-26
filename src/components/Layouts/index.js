@@ -7,15 +7,33 @@ const Layout = ()=> {
         <div className="app">
             <Sidebar />
             <div className="page">
-                <span className='tags top-tag-html'>&lt;html&gt;</span>
+                <span
+                 style={{
+                    left: '10px',
+                    marginLeft: '6px'
+                 }}
+                className='tags top-tag-html'>&lt;html&gt;</span>
                     <br />
-                <span className='tags top-tags'>&lt;body&gt;</span>
+                <span
+                 style={{
+                    left: '30px',
+                    marginLeft: '6px'
+                 }}
+                className='tags top-tags'>&lt;body&gt;</span>
 
                 <Outlet />
 
-                <span className='tags bottom-tags'>&lt;/body&gt;
+                <span 
+                style={{
+                    left: '30px',
+                    marginLeft: '6px'
+                 }}
+                className='tags bottom-tags'>&lt;/body&gt;
                     <br />
-                    <span className='bottom-tag-html'>&lt;/html&gt;</span>
+                    <span
+                     style={{
+                        left: '10px',
+                     }} className='bottom-tag-html'>&lt;/html&gt;</span>
                 </span>
 
             </div>
